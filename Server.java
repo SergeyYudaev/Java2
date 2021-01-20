@@ -23,8 +23,11 @@ public class Server {
                             Scanner sc = new Scanner(socket.getInputStream());
                             String str = sc.nextLine();
 
-                            if (str.equals("end"))
+                            if (str.equals("end")) {
+                                System.out.println("Client lost");
                                 break;
+                            }
+
 
                             System.out.println("Client: " + str);
                         }
@@ -43,7 +46,7 @@ public class Server {
                             String str = sc.nextLine();
 
                             if (str.equals("end")) {
-                                out.println("lost");
+                                out.println("end");
                                 System.out.println("disconnected");
                                 break;
                             }

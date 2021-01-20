@@ -19,9 +19,10 @@ public class Client {
                             Scanner sc = new Scanner(socket.getInputStream());
                             String str = sc.nextLine();
 
-                            if (str.equals("end"))
+                            if (str.equals("end")) {
+                                System.out.println("Server lost");
                                 break;
-
+                            }
                             System.out.println("Server: " + str);
                         }
                     } catch (IOException e) {
@@ -39,7 +40,7 @@ public class Client {
                             String str = sc.nextLine();
 
                             if (str.equals("end")) {
-                                out.println("disconnected");
+                                out.println("end");
                                 System.out.println("disconnected");
                                 break;
                             }
